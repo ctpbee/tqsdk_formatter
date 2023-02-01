@@ -5,7 +5,11 @@
 #### 快速开始
 
 ```bash
+# 从源码编译
 cargo run --release  -- -f ./read -w csv -t ./tick -c true -n 10 
+
+# 从编译程序
+./tqsdk_formatter.exe -f ./read
 ```
 
 #### 参数解析:
