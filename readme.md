@@ -12,6 +12,8 @@ cargo run --release  -- -f ./read -w csv -t ./tick -c true -n 10
 ./tqsdk_formatter.exe -f ./read
 ```
 
+> `ps`: 购买历史数据, 请购买[tqsdk专业版本](https://www.shinnytech.com/tianqin/)
+
 #### 参数解析:
 
 - `-n`: 使用多少个线程并发处理,默认为5
