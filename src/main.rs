@@ -175,10 +175,13 @@ fn main() {
             let name = file.split(".csv").next().unwrap().to_string();
             let frame = read_file(rp, name.clone()).unwrap();
             let formatter = change_formatter(name.clone(), frame).unwrap();
+
+            let split_name: _ = name.as_str().split(".").map(|x| x.to_string()).collect::<Vec<String>>().iter().rev().map(|x| x.to_string()).collect::<Vec<String>>().join(".");
+
             if filetype.eq("parquet") {
-                write_parquet(name.clone(), wp, formatter);
+                write_parquet(split_name, wp, formatter);
             } else {
-                write_csv(name.clone(), wp, formatter);
+                write_csv(split_name, wp, formatter);
             }
             process.lock().unwrap().inc(1);
         });
